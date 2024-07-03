@@ -9,6 +9,8 @@ void prime (int num, bool a[], int i, int j);
 int main() {
     int num;
     scanf("%d", &num);
+
+    //to check prime number including the number entered
     num+=1;
 
     bool* a = (bool*) malloc(num*sizeof(bool));
@@ -27,9 +29,14 @@ int main() {
 }
 
 void prime(int num, bool a[], int i, int j) {
+    
+    //start with i=2, j=2
+    //i increases first, and then j increases once it turns
 
+    //end when i reaches entered num
     if (i>=num) return;
 
+    // prime number algorithm (j^2>i, i must be prime num)
     if (j*j > i) {
         a[i] = true;
         prime(num, a, i+1, 2);
